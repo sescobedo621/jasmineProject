@@ -49,6 +49,35 @@ describe('Calculator tests', function(){
 		});
 	});
 
+	describe('calculator functions are precise', function(){
+		var calc = new Calculator(7);
+
+		it('divide is precise', function(){
+			expect(calc.divide(2)).toEqual(3.5);
+		});
+
+		it('add is precise', function(){
+			calc.clear();
+			calc.setCalcValue(2);
+
+			expect(calc.add(2.35)).toEqual(4.35);
+		});
+
+		it('subtract is precise', function(){
+			calc.clear();
+			calc.setCalcValue(4);
+
+			expect(calc.subtract(2.35)).toEqual(1.65);
+
+		});
+
+		it('multiply is precise', function(){
+			calc.clear();
+			calc.setCalcValue(2);
+
+			expect(calc.multiply(2.45)).toEqual(4.9);
+		});
+	});
 
 });
 
